@@ -1,7 +1,8 @@
 # SWAMI KARUPPASWAMI THUNNAI
 
-from flask import Blueprint
+from flask import Blueprint, render_template
 from auth.helper import server_bee_token
+from dashboard.memory import primary_memory_usage, secondary_memory_usage, hard_disk_information
 
 dashboard = Blueprint("dashboard", __name__)
 
@@ -9,4 +10,7 @@ dashboard = Blueprint("dashboard", __name__)
 @dashboard.route("/dashboard", endpoint="dashboard")
 @server_bee_token
 def render_dashboard():
-    return "T"
+    pm_usage = primary_memory_usage()
+    sm_usage = secondary_memory_usage()
+    return render_template("dashboard/dashboard.html", pm_usage=pm_usage, sm_usage=sm_usage,
+                           hard_disk_information=hard_disk_information())
