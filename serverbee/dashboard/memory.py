@@ -36,3 +36,18 @@ def hard_disk_information():
     return hard_disk_information_table
 
 
+def process_memory_usage():
+    process_mem_table = []
+    for process in psutil.process_iter():
+        try:
+            process_id = process.pid
+            name = process.name()
+            memory_percent = process.memory_percent()
+            memory = process.memory_info()
+            memory = memory.rss
+            info = {"id": process_id, "name": name, "memory_percent": memory_percent, "memory": memory}
+            process_mem_table.append(info)
+        except psutil.AccessDenied:
+            pass
+    return process_mem_table
+
