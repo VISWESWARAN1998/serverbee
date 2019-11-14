@@ -13,8 +13,8 @@ def secondary_memory_usage():
     free = 0
     used = 0
     for partition in partitions:
-        used += psutil.disk_usage(partition.device).used
-        free += psutil.disk_usage(partition.device).free
+        used += psutil.disk_usage(partition.mountpoint).used
+        free += psutil.disk_usage(partition.mountpoint).free
     return {"used": used, "free": free}
 
 
@@ -26,7 +26,7 @@ def hard_disk_information():
         mount_point = partition.mountpoint
         fs_type = partition.fstype
         opts = partition.opts
-        disk_usage = psutil.disk_usage(device)
+        disk_usage = psutil.disk_usage(mount_point)
         total = disk_usage.total
         used = disk_usage.used
         free = disk_usage.free
