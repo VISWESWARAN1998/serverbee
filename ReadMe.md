@@ -6,4 +6,4 @@ solution to solve our immediate needs like checking the memory consumptions, pro
 programmed a small webpage which tells these details. This will be running seperately along with other websites hosted in the
 server.
 
-[!memory](images/memory.png)
+![memory](images/memory.png)
