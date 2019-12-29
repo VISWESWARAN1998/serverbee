@@ -39,7 +39,7 @@ def perform_login():
         if not verify_password(password, original_password_hash):
             return redirect("/")
         session["server_bee_token"] = generate_token(result[0], original_password_hash)
-        return redirect(url_for("dashboard.dashboard"))
+        return redirect(url_for("memory.memory"))
     finally:
         cursor.close()
         connection.close()
