@@ -8,9 +8,36 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+		  $('#port_usage_table').DataTable({
+		    "pagingType": "simple"
+		  });
+		});
+	</script>
 </head>
 <body>
+
+	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+	  <ul class="navbar-nav">
+	    <li class="nav-item">
+	      <a class="nav-link" href="/memory">Memory</a>
+	    </li>
+	    <li class="nav-item active">
+	      <a class="nav-link" href="/network">Network</a>
+	    </li>
+	     <li class="nav-item">
+	      <a class="nav-link" href="/change_password">Change Password</a>
+	    </li>
+	  </ul>
+	</nav>
+
+	<br/>
+
 	<div class="container-fluid">
 		<table class="table table-bordered table-striped">
 			<thead class="thead-dark">
@@ -29,6 +56,53 @@
 					<td>{{net_io_counter["packets_sent"]}}</td>
 					<td>{{net_io_counter["packets_received"]}}</td>
 				</tr>
+			</tbody>
+		</table>
+
+		<div id="network_bar"></div>
+		<script type="text/javascript">
+			let bytes = {
+				x: ["BYTES SENT", "BYTES RECEIVED"],
+				y: [{{net_io_counter["bytes_sent"]}}, {{net_io_counter["bytes_received"]}}],
+				name: "bytes sent/received",
+				type: "bar"
+			};
+
+			let packets = {
+				x: ["PACKETS SENT", "PACKETS RECEIVED"],
+				y: [{{net_io_counter["packets_sent"]}}, {{net_io_counter["packets_received"]}}],
+				name: "packets sent/received",
+				type: "bar"
+			};
+
+			let data = [bytes, packets];
+
+			let layout = {
+				barmode: "group"
+			};
+
+			Plotly.newPlot("network_bar", data, layout);
+		</script>
+
+		<table class="table table-striped table-bordered table-sm" id="port_usage_table">
+			<thead class="thead-dark">
+				<tr>
+					<th>SNO</th>
+					<th>PID</th>
+					<th>PORT</th>
+					<th>STATUS</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for i in port_table %}
+					<tr>
+						<td>{{loop.index}}</td>
+						<td>{{i[0]}}</td>
+						<td>{{i[1]}}</td>
+						<td>{{i[2]}}</td>
+					</tr>
+				{% endfor %}
 			</tbody>
 		</table>
 	</div>
