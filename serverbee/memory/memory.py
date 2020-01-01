@@ -62,3 +62,21 @@ def terminate_process(process_id):
     process = psutil.Process(pid=process_id)
     process.terminate()
 
+
+def process_memory_graph():
+    usage = process_memory_usage()
+    graph = dict()
+    for i in usage:
+        if i["name"] in graph:
+            graph[i["name"]] += i["memory"]
+        else:
+            graph[i["name"]] = i["memory"]
+
+    header = []
+    content = []
+    for i in graph:
+        header.append(i)
+        content.append(graph[i])
+    payload = [header, content]
+    return payload
+

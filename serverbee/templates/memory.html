@@ -56,6 +56,8 @@
 		  });
 		});
 	</script>
+	<!-- Soon we need to move the entire graphs to plotly -->
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -184,6 +186,23 @@
 				{% endfor %}
 			</tbody>
 		</table>
+
+		<div class="text-center">
+			<h3>Process and Memory Consumption</h3>
+		</div>
+
+		<div id="process_graph"></div>
+
+		<script type="text/javascript">
+			let process_data = [
+				{
+					values: {{process_memory_graph[1] | tojson }},
+					labels: {{process_memory_graph[0] | tojson }},
+					type: "pie"
+				}
+			];
+			Plotly.newPlot("process_graph", process_data);
+		</script>
 	</div>
 </body>
 </html>
