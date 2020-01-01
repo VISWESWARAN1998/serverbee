@@ -51,3 +51,14 @@ def process_memory_usage():
             pass
     return process_mem_table
 
+
+def terminate_process(process_id):
+    try:
+        process_id = int(process_id)
+    except ValueError:
+        return None
+    except TypeError:
+        return None
+    process = psutil.Process(pid=process_id)
+    process.terminate()
+
