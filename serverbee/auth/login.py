@@ -6,8 +6,6 @@ from auth.helper import generate_hash, verify_password, generate_token
 
 
 def render_login():
-    headers = request.headers
-    print(headers)
     try:
         connection = get_connection()
         cursor = connection.cursor()

@@ -47,6 +47,7 @@
 
 
 	<!-- DATATABLES -->
+	<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 
 	<script type="text/javascript">
@@ -60,19 +61,7 @@
 	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-	  <ul class="navbar-nav">
-	    <li class="nav-item active">
-	      <a class="nav-link" href="/memory">Memory</a>
-	    </li>
-	    <li class="nav-item">
-	      <a class="nav-link" href="/network">Network</a>
-	    </li>
-	     <li class="nav-item">
-	      <a class="nav-link" href="/change_password">Change Password</a>
-	    </li>
-	  </ul>
-	</nav>
+	{% include "nav.html" %}
 
 	<div class="container">
 		<div class="row">
