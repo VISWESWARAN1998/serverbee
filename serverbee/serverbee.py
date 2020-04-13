@@ -4,6 +4,7 @@ from flask import Flask, request, redirect, render_template
 from auth.auth_view import auth
 from memory.memory_bp import memory
 from network.network_bp import network
+from digital_ocean.do_blueprint import do_bp
 from auth.helper import server_bee_token, generate_hash
 from database.get_connection import get_connection
 
@@ -13,6 +14,7 @@ app.secret_key = "SERVER_BEE_DEFAULT_KEY_PLEASE_CHANGE"
 app.register_blueprint(auth)
 app.register_blueprint(memory)
 app.register_blueprint(network)
+app.register_blueprint(do_bp)
 
 
 @app.route("/change_password")

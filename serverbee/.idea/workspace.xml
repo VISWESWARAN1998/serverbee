@@ -11,20 +11,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="serverbee.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="serverbee.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/serverbee.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+            <state relative-caret-position="-188">
+              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+              <folding>
+                <element signature="e#30#89#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auth_view.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auth/auth_view.py">
+      <file leaf-file-name="do_blueprint.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/digital_ocean/do_blueprint.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+            <state relative-caret-position="493">
+              <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
               <folding>
                 <element signature="e#30#57#0" expanded="true" />
               </folding>
@@ -32,14 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/auth/login.py">
+      <file leaf-file-name="do_init.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/digital_ocean/do_init.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-              <folding>
-                <element signature="e#30#100#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="170">
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -69,8 +69,10 @@
         <option value="$PROJECT_DIR$/database/get_connection.py" />
         <option value="$PROJECT_DIR$/memory/memory.py" />
         <option value="$PROJECT_DIR$/memory/memory_bp.py" />
-        <option value="$PROJECT_DIR$/serverbee.py" />
+        <option value="$PROJECT_DIR$/digital_ocean/do_init.py" />
         <option value="$PROJECT_DIR$/auth/login.py" />
+        <option value="$PROJECT_DIR$/serverbee.py" />
+        <option value="$PROJECT_DIR$/digital_ocean/do_blueprint.py" />
       </list>
     </option>
   </component>
@@ -97,6 +99,16 @@
               <item name="serverbee" type="b2602c69:ProjectViewProjectNode" />
               <item name="serverbee" type="462c0819:PsiDirectoryNode" />
               <item name="auth" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="serverbee" type="b2602c69:ProjectViewProjectNode" />
+              <item name="serverbee" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="serverbee" type="b2602c69:ProjectViewProjectNode" />
+              <item name="serverbee" type="462c0819:PsiDirectoryNode" />
+              <item name="digital_ocean" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="serverbee" type="b2602c69:ProjectViewProjectNode" />
@@ -204,13 +216,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24983476" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info id="DB Browser" order="2" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32909605" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32909605" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -234,6 +247,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding>
+            <element signature="e#30#89#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -503,9 +519,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/auth/login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-35">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding>
+            <element signature="e#30#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/auth/auth_view.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="136">
           <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
           <folding>
             <element signature="e#30#57#0" expanded="true" />
@@ -513,20 +539,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/auth/login.py">
+    <entry file="file://$PROJECT_DIR$/serverbee.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        <state relative-caret-position="-188">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
           <folding>
-            <element signature="e#30#100#0" expanded="true" />
+            <element signature="e#30#89#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/serverbee.py">
+    <entry file="file://$PROJECT_DIR$/digital_ocean/do_init.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        <state relative-caret-position="170">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/digital_ocean/do_blueprint.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+          <folding>
+            <element signature="e#30#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

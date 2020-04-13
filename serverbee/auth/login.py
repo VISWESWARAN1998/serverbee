@@ -3,6 +3,7 @@
 from flask import request, render_template, redirect, url_for, session
 from database.get_connection import get_connection
 from auth.helper import generate_hash, verify_password, generate_token
+from digital_ocean.do_init import do_init
 
 
 def render_login():
@@ -22,6 +23,7 @@ def render_login():
     finally:
         cursor.close()
         connection.close()
+    do_init()
     return render_template("auth/login.html", version=0.1)
 
 
