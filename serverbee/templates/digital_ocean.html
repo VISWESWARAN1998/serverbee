@@ -1,0 +1,51 @@
+<!-- SWAMI KARUPPASWAMI THUNNAI -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Digital Ocean | ServerBee</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</head>
+<body>
+	{% include "nav.html" %}
+	<div class="container-fluid">
+		<div class="text-center">
+			<h1 class="display-3" style="font-size: 20px;">Balance Details</h1>
+		</div>
+		<div class="media">
+			<div class="media-left col-sm-2 col-lg-">
+				<img src="/static/DO_Logo_Vertical_Blue.png" height="200" width="200">
+			</div>
+			<div class="media-body col-sm-10 col-lg-10">
+				<p><b>Month to date balance: </b>{{balance["month_to_date_balance"]}}$</p>
+				<p><b>Month to date usage: </b> {{balance["month_to_date_usage"]}}$</p>
+				<p><b>Account Balance: </b>{{balance["account_balance"]}}%</p>
+				<p><b>Generated at: </b> {{balance["generated_at"]}}</p>
+			</div>
+		</div>
+
+		<div class="text-center">
+			<h1 class="display-3" style="font-size: 20px;">Droplets</h1>
+		</div>
+		{% for i in droplets %}
+			<div class="media" style="margin-left: 40px; margin-right: 40px;">
+				<div class="media-left">
+					{% if i["image"]["distribution"] == "CentOS" %}
+						<img src="/static/centos.png" height="130" width="130">
+					{% elif i["image"]["distribution"] == "Ubuntu" %}
+						<img src="/static/ubuntu.png" height="130" width="130">
+					{% endif %}
+				</div>
+				<div class="media-body">
+					<p><b>Name: </b>{{i["name"]}}</p>
+					<p><b>RAM: </b>{{i["memory"]}} MB</p>
+					<p><b>SSD: </b>{{i["disk"]}} GB</p>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</body>
+</html>
